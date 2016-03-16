@@ -1,0 +1,7 @@
+.DS_Store
+.netrwhist
+oh-my-zsh/*
+!/oh-my-zsh/custom/
+oh-my-zsh/custom/*
+!oh-my-zsh/custom/alias.zsh
+
