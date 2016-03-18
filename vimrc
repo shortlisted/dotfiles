@@ -13,6 +13,11 @@ set autoread
 set wildmenu
 execute pathogen#infect()
 
+" Tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " Searches
 set smartcase
 
