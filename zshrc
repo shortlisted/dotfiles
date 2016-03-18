@@ -2,7 +2,10 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
+
+#Look in ~/.oh-my-zsh/themes/
+# Honukai gnzh cordial bureau alanpeabody kphoen 
+# ext: pygmalion Bullet train Haribo theme Spaceship
 ZSH_THEME="maran"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -84,15 +87,27 @@ if [ -f /usr/bin/vim ]; then
 	export EDITOR=/usr/bin/vim
 fi
 
+# tmux
+######
+source ~/dotfiles/tmuxinator/tmuxinator.zsh
+
+#vim terminal
+#bindkey -v
+
 # Aliases
 #########
 
 alias vimrc='vim ~/.vimrc'
-alias lsd='printf '%s\n' .*'
+alias lsd="printf '%s\\n' .*"
 alias cpd='pwd|tr -d "\n" | pbcopy'
 alias vimz='vim ~/.zshrc'
 alias zs="source ~/.zshrc"
 alias brewery="brew upgrade && brew cleanup && brew update && brew outdated"
+alias zalias="vim +95 ~/.zshrc"
+alias sagent='eval "$(ssh-agent -s)"'
+alias tk="tmux kill-window -t"
+alias tl="tmux ls"
+alias ms="mux start"
 
 # Functions
 
