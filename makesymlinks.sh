@@ -8,7 +8,7 @@
 
 DIR=~/dotfiles
 OLDDIR=~/dotfiles_old
-FILES="bash_profile gvimrc vim vimrc zshrc" #list of files/folders
+FILES="bash_profile gvimrc vim vimrc zshrc tmux tmux.conf" #list of files/folders
 
 #oh-my-zsh
 ##########
@@ -47,4 +47,4 @@ for FILE in $FILES; do
 	ln -s $DIR/$FILE ~/.$FILE
 done
 
-echo "\nSymlinks complete"
+echo '\nSymlinks complete'
