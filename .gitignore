@@ -1,7 +1,8 @@
 .DS_Store
 .netrwhist
-oh-my-zsh/*
-!/oh-my-zsh/custom/
-oh-my-zsh/custom/*
-!oh-my-zsh/custom/alias.zsh
 
+!tmux/
+tmux/*
+!tmux/plugins/
+tmux/plugins/*
+!tmux/plugins/tpm/*
