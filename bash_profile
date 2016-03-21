@@ -1,6 +1,6 @@
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-if [ -f ~/dotfiles/oh-my-zsh/custom/alias.zsh ]; then
-    source ~/dotfiles/oh-my-zsh/custom/alias.zsh
+if [ -f ~/dotfiles/alias.zsh ]; then
+    source ~/dotfiles/alias.zsh
 fi
