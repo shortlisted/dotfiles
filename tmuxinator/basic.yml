@@ -1,0 +1,11 @@
+# ~/.tmuxinator/basic.yml
+name: basic
+root: ~/dotfiles/
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - tig 
+        -
