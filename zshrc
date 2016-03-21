@@ -4,9 +4,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 
 #Look in ~/.oh-my-zsh/themes/
-# Honukai gnzh cordial bureau alanpeabody kphoen 
-# ext: pygmalion Bullet train Haribo theme Spaceship
-ZSH_THEME="maran"
+# Honukai gnzh cordial bureau alanpeabody kphoen mara pygmalion 
+# ext: Bullet train Haribo theme Spaceship
+ZSH_THEME="pygmalion"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -73,6 +73,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#Personal aliases
+#################
+source ~/dotfiles/alias.zsh
+
 # Own settings 
 export HISTSIZE=32768;
 export HISTFILESIZE=$HISTSIZE;
@@ -94,52 +98,3 @@ source ~/dotfiles/tmuxinator/tmuxinator.zsh
 #vim terminal
 #bindkey -v
 
-# Aliases
-#########
-
-alias vimrc='vim ~/.vimrc'
-alias lsd="printf '%s\\n' .*"
-alias cpd='pwd|tr -d "\n" | pbcopy'
-alias vimz='vim ~/.zshrc'
-alias zs="source ~/.zshrc"
-alias brewery="brew upgrade && brew cleanup && brew update && brew outdated"
-alias zalias="vim +95 ~/.zshrc"
-alias sagent='eval "$(ssh-agent -s)"'
-alias tk="tmux kill-window -t"
-alias tl="tmux ls"
-alias ms="mux start"
-
-# Functions
-
-## Make persistent alias from cli
-malias() {
-	if [ $# -le 1 ]; then
-		echo Not valid alias
-		echo "syntax: <malias>  <string of commands>"
-	else
-		echo alias $1="\"${@:2}"\" >> ~/.zshrc
-	fi
-}
-
-## File content to clipboard
-pbc() { cat $1 | pbcopy }
-
-## SSH key function
-## Syntax: sshk keyname user@host
-sshk() { ssh -i ~/.ssh/$1 $2 }
-
-## Translate CLI
-## Require trans - command line translator
-tt() {
-	if (( $# == 0 )); then
-		echo usage: tt word
-	else
-	trans -b en:sv "$*"
-	fi
-}
-
-## Find file containing string in directory
-sfind()	{
-	find . -exec grep -l -s $1 {} \;
-	return 0
-}
