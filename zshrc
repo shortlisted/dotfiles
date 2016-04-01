@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx z pip python history web-search)
+plugins=(git brew osx z pip python history web-search vi-mode)
 
 # User configuration
 
@@ -85,6 +85,8 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
 export HIST_IGNORE_ALL_DUPS;
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # Custom exports
 # ## Set EDITOR to /usr/bin/vim if Vim is installed
 if [ -f /usr/bin/vim ]; then
@@ -96,5 +98,5 @@ fi
 source ~/dotfiles/tmuxinator/tmuxinator.zsh
 
 #vim terminal
-#bindkey -v
+bindkey -v
 
