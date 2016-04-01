@@ -1,3 +1,8 @@
+# Tput?
+#######
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 # Aliases
 #########
 
@@ -12,6 +17,7 @@ alias sagent='eval "$(ssh-agent -s)"'
 alias tk="tmux kill-window -t"
 alias tl="tmux ls"
 alias ms="mux start"
+alias zshrc="vim ~/.zshrc"
 
 # Functions
 
@@ -25,6 +31,20 @@ malias() {
 	fi
 }
 
+## Backup copy
+bcp() { 
+    if [[ $# -eq 0 ]] ; then
+        echo "Usage: ${bold}bcp file${normal} creates a copy named ${bold}file.bak${normal}"
+        kill -INT $$
+    fi
+    cp "$*" "$*".bak
+    if [ -f "$*".bak ]; then
+        echo "File backed up to ${bold}"$*".bak${normal}";
+    else
+        echo "Something went wrong. No backup found.";
+    fi
+}
+
 ## File content to clipboard
 pbc() { cat $1 | pbcopy }
 
@@ -36,7 +56,7 @@ sshk() { ssh -i ~/.ssh/$1 $2 }
 ## Require trans - command line translator
 tt() {
 	if (( $# == 0 )); then
-		echo usage: tt word
+		echo usage: ${bold}tt word${normal}
 	else
 	trans -b en:sv "$*"
 	fi
