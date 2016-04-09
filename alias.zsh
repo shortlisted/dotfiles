@@ -18,6 +18,7 @@ alias tk="tmux kill-window -t"
 alias tl="tmux ls"
 alias ms="mux start"
 alias zshrc="vim ~/.zshrc"
+alias lt="ls -lht | head -5"
 
 # Functions
 
@@ -27,7 +28,7 @@ malias() {
 		echo Not valid alias
 		echo "syntax: <malias>  <string of commands>"
 	else
-		echo alias $1="\"${@:2}"\" >> ~/.zshrc
+		echo alias $1="\"${@:2}"\" >> ~/.alias.zsh
 	fi
 }
 
