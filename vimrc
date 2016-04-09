@@ -34,6 +34,8 @@ set statusline+=%*\ \ %m%r%w\ %P\ \            "Modified? Readonly? Top/bot.
 " Autocommand
 autocmd FileType javascript nnoremap <leader>c I//<esc>
 autocmd FileType python nnoremap <leader>c I#<esc>
+autocmd FileType c nnoremap <leader>c I//<esc>
+"autocmd FileType c set makeprg=gcc\ $*\ $*
 
 """"""""""""
 " => Keys 
@@ -113,5 +115,4 @@ nnoremap <leader>we $a<space>\|\|<space>Celltext<esc>
 nnoremap -nw i<nowiki></nowiki><esc>l3ba
 
 " With inspiration from:
-"https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
 "https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
