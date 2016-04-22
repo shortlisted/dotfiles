@@ -22,6 +22,11 @@ alias lt="ls -lht | head -5"
 
 # Functions
 
+## Basic math
+calc() {
+    bc -l <<< "$@"
+}
+
 ## Make persistent alias from cli
 malias() {
 	if [ $# -le 1 ]; then
