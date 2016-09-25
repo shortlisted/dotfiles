@@ -85,6 +85,11 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
 export HIST_IGNORE_ALL_DUPS;
 
+# From brew info zsh
+#unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Custom exports
@@ -97,3 +102,5 @@ fi
 ######
 source ~/dotfiles/tmuxinator/tmuxinator.zsh
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

@@ -14,8 +14,8 @@ set wildmenu
 execute pathogen#infect()
 
 " Tabs
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Searches
@@ -24,6 +24,9 @@ set smartcase
 """"""""""""
 " => Apperance
 """"""""""""
+
+" Looks
+set textwidth=79
 
 " Status bar
 set laststatus=2

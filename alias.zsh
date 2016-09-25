@@ -19,8 +19,15 @@ alias tl="tmux ls"
 alias ms="mux start"
 alias zshrc="vim ~/.zshrc"
 alias lt="ls -lht | head -5"
-
+alias help="run-help"
+alias p3="python3.5"
+alias vc="cp p3.py"
+alias pbl='pbc "$(ls -rt | tail -n1)"'
 # Functions
+
+## Redo with flags
+alias redo="~/.bin/redo.sh"
+
 
 ## Basic math
 calc() {
@@ -73,3 +80,10 @@ sfind()	{
 	find . -exec grep -l -s $1 {} \;
 	return 0
 }
+
+## tarsee
+#########
+tarsee() {
+  tar -tvf $1
+}
+
