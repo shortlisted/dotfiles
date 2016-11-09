@@ -87,3 +87,8 @@ tarsee() {
   tar -tvf $1
 }
 
+## Convert .tiff to .jpg
+########################
+cvrt() {
+  convert -quality 100 $1.tiff $1.jpg
+}
