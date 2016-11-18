@@ -26,7 +26,7 @@ set smartcase
 """"""""""""
 
 " Looks
-set textwidth=79
+"set textwidth=79
 
 " Status bar
 set laststatus=2
@@ -62,6 +62,8 @@ nnoremap <c-u> U
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>w :w<cr>
+" Sane command key for swedish keyboard
+map ö :
 
 "" Tabs
 nnoremap <leader>< :tabprevious<cr>
