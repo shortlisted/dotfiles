@@ -12,7 +12,7 @@ alias cpd='pwd|tr -d "\n" | pbcopy'
 alias vimz='vim ~/.zshrc'
 alias zs="source ~/.zshrc"
 alias brewery="brew upgrade && brew cleanup && brew update && brew outdated"
-alias zalias="vim +3 ~/dotfiles/alias.zsh"
+alias zalias="vim +8 ~/dotfiles/alias.zsh"
 alias sagent='eval "$(ssh-agent -s)"'
 alias tk="tmux kill-window -t"
 alias tl="tmux ls"
@@ -23,6 +23,7 @@ alias help="run-help"
 alias p3="python3.5"
 alias vc="cp p3.py"
 alias pbl='pbc "$(ls -rt | tail -n1)"'
+
 # Functions
 
 ## Redo with flags
@@ -87,8 +88,15 @@ tarsee() {
   tar -tvf $1
 }
 
-## Convert .tiff to .jpg
+## Autoconvert last .tiff to .jpg
 ########################
 cvrt() {
+  lastfile="$(ls -rt | tail -n1)"
+  convert -quality 100 $lastfile ${lastfile: : -5}.jpg
+}
+
+# Manual convert
+################
+mcvrt() {
   convert -quality 100 $1.tiff $1.jpg
 }
