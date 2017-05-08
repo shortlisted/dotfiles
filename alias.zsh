@@ -20,11 +20,31 @@ alias ms="mux start"
 alias zshrc="vim ~/.zshrc"
 alias lt="ls -lht | head -5"
 alias help="run-help"
-alias p3="python3.5"
+alias p3="python3.6"
 alias vc="cp p3.py"
 alias pbl='pbc "$(ls -rt | tail -n1)"'
+alias my="mysql -u root -p"
+alias tmacs="/usr/local/Cellar/emacs/25.1/bin/emacs-25.1 -nw"
+alias bison="/usr/local/Cellar/bison/3.0.4/bin/bison"
+alias se="sudoedit"
 
 # Functions
+
+# ExpandURL
+###########
+expandurl() {
+  curl -sIL $1 | grep ^Location;
+}
+
+# Emacs
+#######
+
+
+# Man as pdf
+############
+pdfman () {
+  man -t "$@" | open -f -a Preview
+}
 
 ## Redo with flags
 alias redo="~/.bin/redo.sh"
@@ -98,5 +118,5 @@ cvrt() {
 # Manual convert
 ################
 mcvrt() {
-  convert -quality 100 $1.tiff $1.jpg
+  convert -quality 100 $1.svg $1.jpg
 }
