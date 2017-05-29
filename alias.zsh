@@ -20,13 +20,14 @@ alias ms="mux start"
 alias zshrc="vim ~/.zshrc"
 alias lt="ls -lht | head -5"
 alias help="run-help"
-alias p3="python3.6"
+alias p3="python3"
 alias vc="cp p3.py"
 alias pbl='pbc "$(ls -rt | tail -n1)"'
 alias my="mysql -u root -p"
 alias tmacs="/usr/local/Cellar/emacs/25.1/bin/emacs-25.1 -nw"
 alias bison="/usr/local/Cellar/bison/3.0.4/bin/bison"
 alias se="sudoedit"
+alias ml="mdless"
 
 # Functions
 
