@@ -118,6 +118,7 @@ nnoremap <leader>wt i{\|<space>class="wikitable"<cr>!<space>Rubrik<space>!!<spac
 nnoremap <leader>wr $o\|<space>Celltext<space>\|\|<space>Celltext<cr>\|-<esc>
 nnoremap <leader>we $a<space>\|\|<space>Celltext<esc>
 nnoremap -nw i<nowiki></nowiki><esc>l3ba
+nnoremap <leader>syn i<syntaxhighlight lang="mysql"> </syntaxhighlight><esc>Bhxi
 
 " With inspiration from:
 "https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
