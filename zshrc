@@ -1,3 +1,6 @@
+# emacs tramp
+#############
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -49,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew osx z pip python history web-search)
+plugins=(git brew osx z pip python history web-search)
 
 # User configuration
 
@@ -104,3 +107,6 @@ source ~/dotfiles/tmuxinator/tmuxinator.zsh
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+source "/Users/fredrik/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
