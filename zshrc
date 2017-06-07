@@ -9,7 +9,9 @@ export ZSH=$HOME/.oh-my-zsh
 #Look in ~/.oh-my-zsh/themes/
 # Honukai gnzh cordial bureau alanpeabody kphoen mara pygmalion 
 # ext: Bullet train Haribo theme Spaceship
-ZSH_THEME="pygmalion"
+#ZSH_THEME="pygmalion"
+POWERLEVEL9K_MODE='awesome-patched'
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -108,5 +110,7 @@ source ~/dotfiles/tmuxinator/tmuxinator.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
-source "/Users/fredrik/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+# POWERLEVEL9K
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs)
