@@ -28,6 +28,8 @@ alias tmacs="/usr/local/Cellar/emacs/25.1/bin/emacs-25.1 -nw"
 alias bison="/usr/local/Cellar/bison/3.0.4/bin/bison"
 alias se="sudoedit"
 alias ml="mdless"
+alias aux="ps aux | grep"
+alias hg="history | grep"
 
 # Functions
 
