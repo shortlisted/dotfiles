@@ -4,7 +4,8 @@
 
 " Behaviors
 
-set number
+set number " still display global linenumber on current row
+set relativenumber " for easier navigation by row number
 syntax on
 filetype plugin indent on
 set t_Co=256
@@ -26,7 +27,9 @@ set smartcase
 """"""""""""
 
 " Looks
-"set textwidth=79
+set textwidth=80
+set breakindent
+set showbreak=\\\\\
 
 " Status bar
 set laststatus=2
@@ -35,6 +38,7 @@ set statusline+=%*\ %=\ row:%l/%L\ (%03p%%)\   "Rownumber/total(%)
 set statusline+=%*\ \ %m%r%w\ %P\ \            "Modified? Readonly? Top/bot.
 
 " Autocommand
+" comment current line depending on file type
 autocmd FileType javascript nnoremap <leader>c I//<esc>
 autocmd FileType python nnoremap <leader>c I#<esc>
 autocmd FileType c nnoremap <leader>c I//<esc>
