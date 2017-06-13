@@ -27,9 +27,13 @@ set smartcase
 """"""""""""
 
 " Looks
-set textwidth=80
+"set textwidth=80
 set breakindent
 set showbreak=\\\\\
+set background=dark
+
+" Resizing
+autocmd VimResized * wincmd =
 
 " Status bar
 set laststatus=2
@@ -66,8 +70,15 @@ nnoremap <c-u> U
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>w :w<cr>
-" Sane command key for swedish keyboard
-map ö :
+" Sane keys for swedish keyboard
+" command, next fFtT, register, next paragraph, toggle case, indent
+map ö : 
+map Ö ;
+map ä "
+map å {
+map Ä ~
+map Å }
+map z >>
 
 "" Tabs
 nnoremap <leader>< :tabprevious<cr>
