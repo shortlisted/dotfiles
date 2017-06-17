@@ -30,6 +30,7 @@ alias se="sudoedit"
 alias ml="mdless"
 alias aux="ps aux | grep"
 alias hg="history | grep"
+alias gitconfig="vim ~/.gitconfig"
 
 # Functions
 
