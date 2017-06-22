@@ -31,6 +31,7 @@ set smartcase
 set breakindent
 set showbreak=\\\\\
 set background=dark
+colors dues
 
 " Resizing
 autocmd VimResized * wincmd =
@@ -46,6 +47,7 @@ set statusline+=%*\ \ %m%r%w\ %P\ \            "Modified? Readonly? Top/bot.
 autocmd FileType javascript nnoremap <leader>c I//<esc>
 autocmd FileType python nnoremap <leader>c I#<esc>
 autocmd FileType c nnoremap <leader>c I//<esc>
+"autocmd FileType html nnoremap <leader>c <!--<esc>
 "autocmd FileType c set makeprg=gcc\ $*\ $*
 
 """"""""""""
@@ -78,7 +80,7 @@ map ä "
 map å {
 map Ä ~
 map Å }
-map z >>
+map z >
 
 "" Tabs
 nnoremap <leader>< :tabprevious<cr>
