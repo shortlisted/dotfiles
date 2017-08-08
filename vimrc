@@ -13,7 +13,7 @@ set history=1000
 set autoread
 set wildmenu
 execute pathogen#infect()
-
+set pastetoggle=<F2>
 " Tabs
 set tabstop=2
 set shiftwidth=2
@@ -31,7 +31,10 @@ set smartcase
 set breakindent
 set showbreak=\\\\\
 set background=dark
-colors dues
+"colors dues
+colors gruvbox
+" concellevel?
+set conceallevel=2
 
 " Resizing
 autocmd VimResized * wincmd =
@@ -85,6 +88,12 @@ map z >
 "" Tabs
 nnoremap <leader>< :tabprevious<cr>
 nnoremap <leader>z :tabnext<cr>
+
+"" Splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "" Let ',<tab>' toggle between this and the last accessed tab
 let g:lasttab = 1

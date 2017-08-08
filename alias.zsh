@@ -31,6 +31,8 @@ alias ml="mdless"
 alias aux="ps aux | grep"
 alias hg="history | grep"
 alias gitconfig="vim ~/.gitconfig"
+alias svgpng="qlmanage -t -s 1000 -o . "
+alias lsym='ls -la $1 | grep "\->"'
 
 # Functions
 
