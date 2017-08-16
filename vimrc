@@ -47,9 +47,9 @@ set statusline+=%*\ \ %m%r%w\ %P\ \            "Modified? Readonly? Top/bot.
 
 " Autocommand
 " comment current line depending on file type
-autocmd FileType javascript nnoremap <leader>c I//<esc>
-autocmd FileType python nnoremap <leader>c I#<esc>
-autocmd FileType c nnoremap <leader>c I//<esc>
+autocmd FileType javascript nnoremap <leader>k I//<esc>
+autocmd FileType python nnoremap <leader>k I#<esc>
+autocmd FileType c nnoremap <leader>k I//<esc>
 "autocmd FileType html nnoremap <leader>c <!--<esc>
 "autocmd FileType c set makeprg=gcc\ $*\ $*
 
