@@ -75,6 +75,7 @@ nnoremap <c-u> U
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>w :w<cr>
+nnoremap <leader>c V :w !pbcopy<cr><cr>
 " Sane keys for swedish keyboard
 " command, next fFtT, register, next paragraph, toggle case, indent
 map ö : 
