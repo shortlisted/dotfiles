@@ -108,6 +108,13 @@ sfind()	{
 	return 0
 }
 
+## open most recently changed file in vim:
+##########################################
+vl() {
+  recentfile="$(ls -rt | tail -n1)"
+  $EDITOR $recentfile
+}
+
 ## tarsee
 #########
 tarsee() {
