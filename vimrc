@@ -74,6 +74,7 @@ nnoremap <space> /
 nnoremap <c-u> U
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>o :tabe .<cr>
 nmap <leader>w :w<cr>
 nnoremap <leader>c V :w !pbcopy<cr><cr>
 " Sane keys for swedish keyboard
