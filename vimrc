@@ -18,9 +18,11 @@ set pastetoggle=<F2>
 set tabstop=2
 set shiftwidth=2
 set expandtab
+" Folds
+set foldmethod=manual
 
 " Searches
-set smartcase
+set ignorecase
 
 """"""""""""
 " => Apperance
@@ -81,11 +83,10 @@ nnoremap <leader>c V :w !pbcopy<cr><cr>
 " command, next fFtT, register, next paragraph, toggle case, indent
 map ö : 
 map Ö ;
-map ä "
+map ä %
 map å {
 map Ä ~
 map Å }
-map z >
 
 "" Tabs
 nnoremap <leader>< :tabprevious<cr>
