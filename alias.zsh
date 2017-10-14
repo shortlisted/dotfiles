@@ -133,3 +133,9 @@ cvrt() {
 mcvrt() {
   convert -quality 100 $1.svg $1.jpg
 }
+
+# Convert (LaTeX) pdf -> white background png
+#############################################
+pdfpng() {
+  convert -density 300 $1.pdf -quality 90 -flatten $1.png
+}
