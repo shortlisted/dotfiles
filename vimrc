@@ -18,11 +18,25 @@ set pastetoggle=<F2>
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+set noexpandtab " Make sure that every file uses real tabs, not spaces
+set shiftround  " Round indent to multiple of 'shiftwidth'
+set autoindent  " Copy indent from current line, over to the new line
+
+" Set the tab width
+let s:tabwidth=2
+au Filetype * let &l:tabstop = s:tabwidth
+au Filetype * let &l:shiftwidth = s:tabwidth
+au Filetype * let &l:softtabstop = s:tabwidth
+
 " Folds
 set foldmethod=manual
 
 " Searches
 set ignorecase
+
+" Skip syntastic for python
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
 """"""""""""
 " => Apperance
@@ -79,6 +93,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>o :tabe .<cr>
 nmap <leader>w :w<cr>
 nnoremap <leader>c V :w !pbcopy<cr><cr>
+" for insane hard mode
+nnoremap <leader>hm :call HardMode()<cr>
+" for sanity and easy mode:
+nnoremap <leader>em :call EasyMode()<cr>
 " Sane keys for swedish keyboard
 " command, next fFtT, register, next paragraph, toggle case, indent
 map ö : 
