@@ -1,37 +1,68 @@
 " => .vimrc
 """""""""""
-"2018-02-06
+"2018-02-08
 
-" => Plugin handler
-"""""""""""""""""""
-execute pathogen#infect()
+"trying Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-dispatch'
+Plugin 'othree/eregex.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/goyo.vim'
+Plugin 'wikitopian/hardmode'
+Plugin 'Yggdroot/indentline'
+Plugin 'junegunn/limelight.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tmhedberg/matchit'
+Plugin 'scrooloose/nerdtree'
+Plugin 'reedes/vim-pencil'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'danilo-augusto/vim-afterglow' " theme
+Plugin 'Badacadabra/vim-archery' " theme
+Plugin 'challenger-deep-theme/vim' " theme
+Plugin 'nightsense/vimspectr' " theme
+
+call vundle#end()
+filetype plugin indent on
 
 " => Apperances
 """""""""""""""
 set relativenumber " for easier navigation by row number
 set number " still display global linenumber on current row
+
+" Theme and status
 syntax on
+set background=dark
+set termguicolors
+colorscheme flattened_dark
+" nice: gruvbox solarized dues archery
+
+let g:airline_solarized_bg='dark'
+set laststatus=2
+set statusline+=%*\[%n] "buffernr
+set statusline+=%*\ %=\ row:%l/%L\ (%03p%%)\  "rown/total/%
+set statusline+=%*\ \ %m%r%w\ %P\ \ "Modified? Readonly? Top/bot.
+set conceallevel=2
+
 " Breakindent
 set linebreak
 set breakindent
 let &showbreak = '↳ '
 let &breakat = " \t;:,])}"
-" Theme and status
-set background=dark
-colorscheme iceberg " don't forget the appealing ones below
-" gruvbox solarized dues
-" Status bar
-let g:airline_theme = "hybrid"
-set laststatus=2
-set statusline+=%*\[%n]                        "buffernr
-set statusline+=%*\ %=\ row:%l/%L\ (%03p%%)\   "Rownumber/total(%)
-set statusline+=%*\ \ %m%r%w\ %P\ \            "Modified? Readonly? Top/bot.
-set conceallevel=2
 
 " => Behaviors
 """"""""""""""
 set autoindent  " Copy indent from current line, over to the new line
-filetype plugin indent on
 set history=1000
 set autoread
 set wildmenu
@@ -86,7 +117,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " yank to clipboard on mac
-nnoremap <leader>c V :w !pbcopy<cr><cr>
+nnoremap <leader>c :w !pbcopy<cr><cr>
 " for insane hard mode
 nnoremap <leader>hm :call HardMode()<cr>
 " for sanity and easy mode:
@@ -112,7 +143,3 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " Goyo
 nnoremap <silent> <leader>y :Goyo<cr>
-
-" Ag.vim
-" gv to Ag selected text
-vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
