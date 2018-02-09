@@ -1,17 +1,16 @@
 # emacs tramp
 #############
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
+# Path to your oh-my-zsh installation.uexport ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/dotfiles/oh-my-zsh
 # Set name of the theme to load.
 
 #Look in ~/.oh-my-zsh/themes/
 # Honukai gnzh cordial bureau alanpeabody kphoen mara pygmalion 
 # ext: Bullet train Haribo theme Spaceship
-#ZSH_THEME="pygmalion"
+#ZSH_THEME="pygmalion
 POWERLEVEL9K_MODE='awesome-patched'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -103,15 +102,19 @@ if [ -f /usr/bin/vim ]; then
 	export EDITOR=/usr/bin/vim
 fi
 
+# For system agnostic dotfiles below
+
+case $(uname) in
+  'Darwin') source ~/dotfiles/tmuxinator/tmuxinator.zsh;test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+esac
 # tmux
 ######
-source ~/dotfiles/tmuxinator/tmuxinator.zsh
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#source ~/dotfiles/tmuxinator/tmuxinator.zsh
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # POWERLEVEL9K
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs)
 #PROMPT='%n@%m:%15<..<%~%<<%# '
+#source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
