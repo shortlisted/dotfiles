@@ -8,9 +8,9 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 #Look in ~/.oh-my-zsh/themes/
 # Honukai gnzh cordial bureau alanpeabody kphoen mara pygmalion 
 # ext: Bullet train Haribo theme Spaceship
-#ZSH_THEME="pygmalion
-POWERLEVEL9K_MODE='awesome-patched'
-ZSH_THEME="agnoster"
+#ZSH_THEME="pygmalion" #"agnoster"
+POWERLEVEL9K_MODE='awesome-fontconfig'
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -105,13 +105,36 @@ fi
 # For system agnostic dotfiles below
 
 case $(uname) in
-  'Darwin') source ~/dotfiles/tmuxinator/tmuxinator.zsh;test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  'Darwin') source ~/dotfiles/tmuxinator/tmuxinator.zsh;test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh";export EDITOR=/usr/local/bin/vim
 esac
 
 # POWERLEVEL9K
+# Right prompt
+# Show insert or command mode in right prompt
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='46' #green
+POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='196' #red
+POWERLEVEL9K_VI_INSERT_MODE_STRING=''
+POWERLEVEL9K_VI_COMMAND_MODE_STRING=''
+
+# Left prompt
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode background_jobs)
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
+POWERLEVEL9K_HOME_ICON=''
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status user_joined vcs dir )
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode dir_writable_joined background_jobs)
+
+#Colors
+#######
+POWERLEVEL9K_STATUS_OK_BACKGROUND='235'
+POWERLEVEL9K_USER_DEFAULT_BACKGROUND='235'
+POWERLEVEL9K_USER_DEFAULT_FOREGROUND='220'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='white'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='026'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='026'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='026'
 #PROMPT='%n@%m:%15<..<%~%<<%# '
 #source /usr/share/zsh-theme-powerlevel9k/powerleel9k.zsh-theme
 
