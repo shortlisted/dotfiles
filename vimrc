@@ -90,6 +90,8 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 autocmd FileType javascript nnoremap § I//<esc>
 autocmd FileType python nnoremap § I#<esc>
 autocmd FileType c nnoremap § I//<esc>
+autocmd FileType sh nnoremap § I#<esc>
+autocmd FileType php nnoremap § I;<esc>
 
 " => Keys 
 """"""""""""
