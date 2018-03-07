@@ -113,13 +113,24 @@ map Ö ;
 " Insert mode
 " delete line in insert mode
 inoremap <C-D> <esc>ddi
+" insert from clipboard 
+inoremap <C-v> <C-r><C-o>+
+
+" Visual mode
+" Copy to system clipboard
+vnoremap <C-c> "+y
 
 " Normal mode
+" Yank movement to clipboard
+nnoremap <C-c> "+y
+
+" NERDTree
+nnoremap <C-n> :NERDTree<cr>
+
+" Vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" yank to clipboard on mac
-nnoremap <leader>c :w !pbcopy<cr><cr>
 " for insane hard mode
 nnoremap <leader>hm :call HardMode()<cr>
 " for sanity and easy mode:
@@ -132,10 +143,10 @@ nnoremap <leader>t :tabe
 " Move in splits like a sane person
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 
-"" Let ',<tab>' toggle between this and the last accessed tab
+"" Let '<Space><tab>' toggle between this and the last accessed tab
 let g:lasttab = 1
 nmap <leader><tab> :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
