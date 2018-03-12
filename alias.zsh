@@ -36,6 +36,17 @@ alias lsym='ls -la $1 | grep "\->"'
 
 # Functions
 
+# JavaAlias
+###########
+jm() {
+  if [ $# -ne 1 ]; then
+    echo Error. Supply file name without .java
+    echo "jm <filename>"
+  else
+    javac $1.java;java $1
+  fi
+}
+
 # ExpandURL
 ###########
 expandurl() {
