@@ -88,6 +88,7 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 " Autocommand
 " comment current line depending on file type
 autocmd FileType javascript nnoremap § I//<esc>
+autocmd FileType java nnoremap § I//<esc>
 autocmd FileType python nnoremap § I#<esc>
 autocmd FileType c nnoremap § I//<esc>
 autocmd FileType sh nnoremap § I#<esc>
