@@ -7,7 +7,7 @@ normal=$(tput sgr0)
 #########
 
 alias vimrc='vim ~/.vimrc'
-alias lsd="printf '%s\\n' .*"
+alias lsd="ls -ld .?*"
 alias cpd='pwd|tr -d "\n" | pbcopy'
 alias zs="source ~/.zshrc"
 alias brewery="brew upgrade && brew cleanup && brew update && brew outdated"
@@ -19,7 +19,7 @@ alias ms="mux start"
 alias zshrc="vim ~/.zshrc"
 alias i3rc="vim ~/.config/i3/config"
 alias i3s="vim ~/.config/i3status/config"
-alias lt="ls -lht | head -5"
+alias lt="ls -lht --color | head -5"
 alias help="run-help"
 alias pp="python3"
 alias pbl='pbc "$(ls -rt | tail -n1)"'
@@ -33,6 +33,7 @@ alias hg="history | grep"
 alias gitconfig="vim ~/.gitconfig"
 alias svgpng="qlmanage -t -s 1000 -o . "
 alias lsym='ls -la $1 | grep "\->"'
+alias er='echo $?'
 
 # Functions
 
