@@ -87,12 +87,15 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
 " Autocommand
 " comment current line depending on file type
+"  augroups?
 autocmd FileType javascript nnoremap § I//<esc>
 autocmd FileType java nnoremap § I//<esc>
 autocmd FileType python nnoremap § I#<esc>
 autocmd FileType c nnoremap § I//<esc>
 autocmd FileType sh nnoremap § I#<esc>
 autocmd FileType php nnoremap § I;<esc>
+" multiline?
+autocmd FileType sh vnoremap § I: '<cr><esc>gvA<cr>'<esc>
 
 " => Keys 
 """"""""""""
@@ -124,6 +127,9 @@ vnoremap <C-c> "+y
 " Normal mode
 " Yank movement to clipboard
 nnoremap <C-c> "+y
+
+" Save file from normal mode
+nnoremap <C-s> :w<cr>
 
 " NERDTree
 nnoremap <C-n> :NERDTree<cr>
