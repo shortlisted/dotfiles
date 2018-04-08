@@ -85,7 +85,7 @@ set whichwrap+=<,>,h,l
 " Skip syntastic for python
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
-" Autocommand
+" Autocommands
 " comment current line depending on file type
 "  augroups?
 autocmd FileType javascript nnoremap § I//<esc>
@@ -96,6 +96,9 @@ autocmd FileType sh nnoremap § I#<esc>
 autocmd FileType php nnoremap § I;<esc>
 " multiline?
 autocmd FileType sh vnoremap § I: '<cr><esc>gvA<cr>'<esc>
+
+" wrap on diff-files
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
 " => Keys 
 """"""""""""
