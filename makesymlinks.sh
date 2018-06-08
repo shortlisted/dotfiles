@@ -12,19 +12,10 @@ olddot=~/dotfiles_old
 myfiles="bash_profile vimrc zshrc alias.zsh gitconfig gitignore_global"
 existfiles=""
 
-## create dotfiles dir if it doesn't exist
-if [ ! -d $dotdir ]; then 
-  mkdir -p $dotdir
-else
-  printf "dotfile directory already exists @ $HOME/, aborting\n"
-  printf "delete the folder $HOME/$dotdir and rerun the script to use it.\n"
-  exit 0
-fi
-
 ## look for exisiting dotfiles in ~/
 printf "checking if any dotfile already exists...\n"
 for file in $myfiles; do
-  if [ -f .$file ]; then
+  if [ -f ~/.$file ]; then
     printf "dotfile .$file found...\n";
     existfiles="$existfiles $file"
   else
@@ -47,9 +38,19 @@ elif [ -L .oh-my-zsh ]; then
   printf "oh-my-zsh as symlink exists...\n"
 else
   printf "no .oh-my-zsh, cloning...\n\n"
-  git clone https://github.com/robbyrussell/oh-my-zsh.git dotfiles/oh-my-zsh
+  git clone https://github.com/robbyrussell/oh-my-zsh.git $dotdir/oh-my-zsh
   printf "\n"
-  ln -s $dotdir/oh-my-zsh .oh-my-zsh
+  ln -s $dotdir/oh-my-zsh ~/.oh-my-zsh
+fi
+
+read -p "Download powerlevel9k theme (y/n)?  " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+## powerlevel9k theme
+if [ ! -d $dotdir/oh-my-zsh/custom/themes/powerlevel9k ]; then
+  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+fi
 fi
 
 # Folders and symlinks
@@ -61,14 +62,13 @@ if [ -n "$existfiles" ]; then
   mkdir $olddot
   for file in $existfiles; do
     echo "Moving $file from $HOME to $olddot"
-    mv ./.$file $olddot/$file
+    mv ~/.$file $olddot/$file
   done
 fi
 
 for file in $myfiles; do
   echo "Creating symlinks in $HOME/.$file to $dotdir"
   ln -s $dotdir/$file .$file
-  #[ -L .$file ]
 done
 
 printf "Symlinks complete!\n\n"
