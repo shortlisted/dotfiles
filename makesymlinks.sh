@@ -98,7 +98,7 @@ read last
 printf "Email address: "
 read email
 
-cat > dotfiles/gitconfig_local << EOF
+cat > $dotdir/gitconfig_local << EOF
 [user]
        name = $first $last
        email = $email
