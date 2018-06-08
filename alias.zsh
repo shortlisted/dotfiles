@@ -20,6 +20,7 @@ alias zshrc="vim ~/.zshrc"
 alias i3rc="vim ~/.config/i3/config"
 alias i3s="vim ~/.config/i3status/config"
 alias lt="ls -lht --color | head -5"
+alias lat="ls -lAht | head -10"
 alias help="run-help"
 alias pp="python3"
 alias pbl='pbc "$(ls -rt | tail -n1)"'
@@ -117,6 +118,7 @@ tt() {
 
 ## Find file containing string in directory
 sfind()	{
+        #-l print name of file -s supress error msgs
 	find . -exec grep -l -s $1 {} \;
 	return 0
 }
