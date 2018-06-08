@@ -34,6 +34,7 @@ alias gitconfig="vim ~/.gitconfig"
 alias svgpng="qlmanage -t -s 1000 -o . "
 alias lsym='ls -la $1 | grep "\->"'
 alias er='echo $?'
+alias venv='source virtualenv/bin/activate'
 
 # Functions
 

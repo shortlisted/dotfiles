@@ -136,6 +136,7 @@ nnoremap <C-s> :w<cr>
 
 " NERDTree
 nnoremap <C-n> :NERDTree<cr>
+nnoremap <leader>f :NERDTreeToggle<cr>
 
 " Vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
