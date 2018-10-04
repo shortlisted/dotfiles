@@ -8,7 +8,7 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 #Look in ~/.oh-my-zsh/themes/
 # Honukai gnzh cordial bureau alanpeabody kphoen mara pygmalion 
 # ext: Bullet train Haribo theme Spaceship
-POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='awesome-patched'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -120,7 +120,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_HOME_SUB_ICON=''
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_HOME_ICON=''
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status user_joined vcs dir dir_writable )
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status vcs dir dir_writable )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode background_jobs)
 
 #Colors
