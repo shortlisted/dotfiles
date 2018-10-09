@@ -27,6 +27,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'reedes/vim-pencil'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'tpope/vim-commentary'
 Plugin 'danilo-augusto/vim-afterglow' " theme
 Plugin 'Badacadabra/vim-archery' " theme
 Plugin 'challenger-deep-theme/vim' " theme
@@ -85,18 +86,6 @@ set whichwrap+=<,>,h,l
 " Skip syntastic for python
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
-" Autocommands
-" comment current line depending on file type
-"  augroups?
-autocmd FileType javascript nnoremap § I//<esc>
-autocmd FileType java nnoremap § I//<esc>
-autocmd FileType python nnoremap § I#<esc>
-autocmd FileType c nnoremap § I//<esc>
-autocmd FileType sh nnoremap § I#<esc>
-autocmd FileType php nnoremap § I;<esc>
-" multiline?
-autocmd FileType sh vnoremap § I: '<cr><esc>gvA<cr>'<esc>
-
 " wrap on diff-files
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
@@ -137,6 +126,10 @@ nnoremap <C-s> :w<cr>
 " NERDTree
 nnoremap <C-n> :NERDTree<cr>
 nnoremap <leader>f :NERDTreeToggle<cr>
+
+" Comments
+nnoremap § :Commentary<cr>
+vnoremap § :Commentary<cr>
 
 " Vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
