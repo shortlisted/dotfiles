@@ -64,9 +64,15 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
+#Go development
+export GOPATH="${HOME}/Programmering/go"
+
+# Vim as manpager
+# export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
+export MANPAGER="col -b | vim --noplugin -c 'set ft=man ts=8 nomod nolist nonu noma' -"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Custom Aliases in /oh-my-zsh/custom/aliases.zsh
@@ -80,12 +86,11 @@ export LANG=en_US.UTF-8
 #################
 source ~/dotfiles/alias.zsh
 
-# Own settings 
+# History settings 
 export HISTSIZE=32768;
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
-
 export HIST_IGNORE_ALL_DUPS;
 
 # From brew info zsh
@@ -97,15 +102,17 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Custom exports
 # ## Set EDITOR to /usr/bin/vim if Vim is installed
-if [ -f /usr/bin/vim ]; then
+if [ -f /usr/bin/local/vim ]; then
+  export EDITOR=/usr/bin/local/vim
+elif [ -f /usr/bin/vim ]; then
 	export EDITOR=/usr/bin/vim
 fi
 
 # For system agnostic dotfiles below
 
-case $(uname) in
-  'Darwin') source ~/dotfiles/tmuxinator/tmuxinator.zsh;test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh";export EDITOR=/usr/local/bin/vim
-esac
+# case $(uname) in
+#   'Darwin') source ~/dotfiles/tmuxinator/tmuxinator.zsh;test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh";export EDITOR=/usr/local/bin/vim
+# esac
 
 # POWERLEVEL9K
 # Right prompt
