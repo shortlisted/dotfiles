@@ -28,6 +28,7 @@
 	m = mergetool
         lg = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
         sh = ls-tree -r master --name-only
+        undo = checkout --
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
