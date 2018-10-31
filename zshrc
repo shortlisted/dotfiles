@@ -52,7 +52,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git brew osx z pip python history web-search)
+plugins=(vi-mode git brew osx z pip python history web-search virtualenv)
 
 # User configuration
 
@@ -66,10 +66,6 @@ export LANG=en_US.UTF-8
 
 #Go development
 export GOPATH="${HOME}/Programmering/go"
-
-# Vim as manpager
-# export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
-export MANPAGER="col -b | vim --noplugin -c 'set ft=man ts=8 nomod nolist nonu noma' -"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -127,7 +123,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_HOME_SUB_ICON=''
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_HOME_ICON=''
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status vcs dir dir_writable )
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status virtualenv vcs dir dir_writable )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode background_jobs)
 
 #Colors
