@@ -158,4 +158,14 @@ vim +PluginInstall +qall
 printf "Contents of $dotdir\n"
 ls -a $dotdir
 
-printf "All installations complete. Type: sudo chsh /usr/bin/zsh\nto change login shell for user.\n"
+
+if [ $machine == Mac ]; then
+  if grep -q "/usr/local/bin/zsh" /etc/shells; then
+    printf "Shell available. Type: chpass -s $(which zsh) $(whoami)\nto change login shell for user.\n"
+  else
+    printf "Shell not available. Type: sudo echo /usr/local/bin/zsh >> /etc/shells\n to add homebrew zsh as an available shell.\n"
+    printf "Type: chpass -s $(which zsh) $(whoami)\nto change login shell for user.\n"
+  fi
+else
+  printf "All installations complete. Type: sudo chsh /usr/bin/zsh\nto change login shell for user.\n"
+fi
