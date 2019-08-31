@@ -105,10 +105,14 @@ map ä /
 map Ä "
 map ö :
 map Ö ;
+map <Up> gk
+map <Down> gj
 
 " Insert mode
 " delete line in insert mode
 inoremap <C-D> <esc>ddi
+inoremap <Up> <esc>gki
+inoremap <Down> <esc>gji
 " insert from clipboard 
 inoremap <C-v> <C-r><C-o>+
 
