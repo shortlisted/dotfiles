@@ -37,6 +37,7 @@ alias lsym='ls -la $1 | grep "\->"'
 alias er='echo $?'
 alias venv='source virtualenv/bin/activate'
 alias pq='pacman -Q | grep $1'
+alias die='kill -9'
 
 # Functions
 
