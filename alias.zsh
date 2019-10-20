@@ -71,6 +71,12 @@ pdfman () {
 ## Redo with flags
 alias redo="~/.bin/redo.sh"
 
+## mkdir && cd
+mc ()
+{
+  mkdir -p -- "$1" &&
+    cd -P -- "$1"
+  }
 
 ## Basic math
 calc() {
