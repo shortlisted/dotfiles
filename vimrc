@@ -164,3 +164,14 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " Goyo
 nnoremap <silent> <leader>y :Goyo<cr>
+
+" => Functions
+""""""""""""""
+
+" => ia-Ish
+function! SetUpForMd() abort
+  set background=light
+  colorscheme PaperColor
+  Goyo
+endfunction
+command Md call SetUpForMd()
