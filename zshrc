@@ -9,6 +9,7 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 # Honukai gnzh cordial bureau alanpeabody kphoen mara pygmalion 
 # ext: Bullet train Haribo theme Spaceship
 POWERLEVEL9K_MODE='awesome-patched'
+# POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -98,10 +99,10 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Custom exports
 # ## Set EDITOR to /usr/bin/vim if Vim is installed
-if [ -f /usr/bin/local/vim ]; then
-  export EDITOR=/usr/bin/local/vim
+if [ -f /usr/local/bin/vim ]; then
+  export EDITOR=/usr/local/bin/vim
 elif [ -f /usr/bin/vim ]; then
-	export EDITOR=/usr/bin/vim
+  export EDITOR=/usr/bin/vim
 fi
 
 # For system agnostic dotfiles below
@@ -115,8 +116,8 @@ fi
 # Show insert or command mode in right prompt
 POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='46' #green
 POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='196' #red
-POWERLEVEL9K_VI_INSERT_MODE_STRING=''
-POWERLEVEL9K_VI_COMMAND_MODE_STRING=''
+POWERLEVEL9K_VI_INSERT_MODE_STRING='✍'
+POWERLEVEL9K_VI_COMMAND_MODE_STRING=' '
 
 # Left prompt
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -124,7 +125,7 @@ POWERLEVEL9K_HOME_SUB_ICON=''
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_HOME_ICON=''
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status virtualenv vcs dir dir_writable )
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode background_jobs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode background_jobs )
 
 #Colors
 #######
