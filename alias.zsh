@@ -19,7 +19,7 @@ alias ms="mux start"
 alias zshrc="vim ~/.zshrc"
 alias i3rc="vim ~/.config/i3/config"
 alias i3s="vim ~/.config/i3status/config"
-alias lt="ls -lht --color | head -5"
+alias lt="gls -lht --color | head -5"
 alias lat="ls -lAht | head -10"
 alias help="run-help"
 alias pp="python3"
@@ -38,6 +38,8 @@ alias er='echo $?'
 alias venv='source virtualenv/bin/activate'
 alias pq='pacman -Q | grep $1'
 alias die='kill -9'
+alias bp='bpython'
+alias love='/Applications/love.app/Contents/MacOS/love'
 
 # Functions
 
